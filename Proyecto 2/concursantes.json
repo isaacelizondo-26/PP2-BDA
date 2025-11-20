@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "nombre": "Carolina",
+    "categoria": "Canto",
+    "foto": "carolina.png",
+    "votos_acumulados": 0
+  },
+  {
+    "id": 2,
+    "nombre": "Mateo",
+    "categoria": "Baile",
+    "foto": "mateo.png",
+    "votos_acumulados": 0
+  },
+  {
+    "id": 3,
+    "nombre": "Lucy",
+    "categoria": "Comedia",
+    "foto": "lucy.png",
+    "votos_acumulados": 0
+  },
+  {
+    "id": 4,
+    "nombre": "Jorge",
+    "categoria": "Baile",
+    "foto": "jorge.png",
+    "votos_acumulados": 0
+  },
+
+  { "id": 5,
+    "nombre": "Monique",
+    "categoria": "Canto",
+    "foto": "monique.png",
+    "votos_acumulados": 0
+  },
+  { "id": 6,
+    "nombre": "Allan",
+    "categoria": "Canto",
+    "foto": "allan.png",
+    "votos_acumulados": 0
+  }
+]

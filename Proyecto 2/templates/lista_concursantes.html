@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Votación Pública</title>
+</head>
+<body>
+    <h1>Participantes</h1>
+
+    <!-- Mensajes flash (éxito / error) -->
+    {% with mensajes = get_flashed_messages() %}
+        {% if mensajes %}
+            <ul>
+                {% for mensaje in mensajes %}
+                    <li>{{ mensaje }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% for c in concursantes %}
+        <div style="border:1px solid #ccc;padding:10px;margin:10px;width:250px;">
+            <img src="{{ url_for('static', filename='fotos/' ~ c.foto) }}"
+                 width="200"
+                 alt="Foto de {{ c.nombre }}">
+            <h3>{{ c.nombre }}</h3>
+            <p>Categoría: {{ c.categoria }}</p>
+
+            <!-- Botón de votar -->
+            <form action="{{ url_for('votar', concursante_id=c.id) }}" method="post">
+                <button type="submit">Votar</button>
+            </form>
+        </div>
+    {% endfor %}
+
+    <p><a href="{{ url_for('admin_panel') }}">Ir al panel de administración</a></p>
+</body>
+</html>

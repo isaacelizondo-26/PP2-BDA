@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor de votación en tiempo real</title>
+</head>
+<body>
+    <h1>Monitor de votación en tiempo real</h1>
+
+    <p>Total de votos registrados (Redis): <strong>{{ total_votos }}</strong></p>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Votos (Redis)</th>
+        </tr>
+        {% for c in concursantes %}
+        <tr>
+            <td>
+                <img src="{{ url_for('static', filename='fotos/' ~ c.foto) }}"
+                     width="80"
+                     alt="Foto de {{ c.nombre }}">
+            </td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.categoria }}</td>
+            <td>{{ c.votos_redis }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="{{ url_for('admin_panel') }}">Volver al panel de administración</a></p>
+</body>
+</html>
